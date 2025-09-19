@@ -22,7 +22,8 @@ RUN set -x \
  && yarn install \
  && yarn global add $PWD \
  && cd /opt \
- && git clone --branch "${VERSION}" --single-branch https://github.com/logseq/logseq logseq \
+ && git clone https://github.com/logseq/logseq logseq \
+ && git checkout ${VERSION} \
  && cd logseq \
  && yarn install --frozen-lockfile \
  && yarn gulp:build \
