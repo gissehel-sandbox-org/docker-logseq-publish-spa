@@ -23,8 +23,8 @@ RUN set -x \
  && yarn global add $PWD \
  && cd /opt \
  && git clone https://github.com/logseq/logseq logseq \
- && git checkout ${VERSION} \
  && cd logseq \
+ && git checkout "${VERSION}" \
  && yarn install --frozen-lockfile \
  && yarn gulp:build \
  && clojure -M:cljs release publishing \
